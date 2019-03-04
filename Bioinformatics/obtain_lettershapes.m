@@ -71,7 +71,7 @@ resize_percent=0.3; % how much resolution to shrink.maximal is 1. smaller value 
 %%%%%%%% /parameters%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-figure;
+
 %%%%%%%%%%%%%%%% DON'T CHANGE THINGS BLOW!!!%%%%%%%%%%%%%%%%%
 % use command "close all" for closing all ploting windows
 letterclass=[];
@@ -90,6 +90,9 @@ for l=1:length(letterclass.alphabet)
     [threeDim, Map] = frame2im(F);
     I_ori=mat2gray(threeDim);I_ori=I_ori(:,:,1);
     I=imresize(I_ori,resize_percent);
+    
+    
+
     edgeM = edge(I,'Canny');
     [edge_js,edge_is]=find(edgeM>0.99);
     
